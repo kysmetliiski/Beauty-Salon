@@ -1,6 +1,6 @@
 .photo{
-    width: 10%;
-    height: 10%;
+  width: 4%;
+  height: 2%;
     float: left;
     padding-right: 15px;
 }
@@ -47,9 +47,9 @@ body {
   .wave {
     display: block;
     position: relative;
-    height: 80px;
+    height: 180px;
     width: 100%;
-    background: rgb(57, 27, 112);
+    background: rgb(10, 123, 148);
     transform: scale(1, 1);
   }
   

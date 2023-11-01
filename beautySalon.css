@@ -1,0 +1,21 @@
+body {
+    background-image: url('snimki/salon-image-2.jpg' );
+    background-size: cover;
+    background-repeat: no-repeat;
+  overflow: hidden;
+  }
+.text-center{
+  text-align: center;
+}
+.photo{
+    width: 4%;
+    height: 2%;
+    float: left;    
+    padding-right: 15px;
+}
+.button{
+    padding-top: 50px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+
+}
