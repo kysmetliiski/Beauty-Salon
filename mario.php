@@ -21,7 +21,7 @@
 
   if ( isset( $_POST['submit'] ) ) {
   
-      // записване на данните от полетата в променливи за по-удобно bratmeeee
+      // записване на данните от полетата в променливи за по-удобно 
   
    
      $chas = $_POST['chas'];
@@ -30,7 +30,7 @@
     $user_id     = $_SESSION['user']['id'];
 
     function _p( $text )
-{dddd
+{
   echo "<pre>";
     print_r($_POST);
 
