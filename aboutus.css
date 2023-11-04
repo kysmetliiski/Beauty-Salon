@@ -5,7 +5,7 @@ h1,h3,.text1,.text{
 h1{
     text-align: center;
         padding-bottom: 30px;
-        padding-top: 130px;
+        padding-top: 70px;
      
       }
     h3{
@@ -22,13 +22,12 @@ h1{
     }
 
 .text{
-    padding-top: 15px;
     text-indent: 20px;
     padding-left: 20px;
     padding-right: 15px;
     max-width: 430px;
     text-align: justify;
-    font-size: 17px;
+    font-size: 18px;
     
 }
 

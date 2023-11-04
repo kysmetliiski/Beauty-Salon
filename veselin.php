@@ -130,6 +130,8 @@ function _p( $text )
     
         <option value="select">Изберете:</option>
 
+      
+
 
 
 
@@ -138,7 +140,7 @@ for($i=9; $i<=22; $i++){
   $sql = "SELECT * FROM vreservations WHERE chas='$i:00'";
 
   $chas = $connection->query("SELECT * FROM vreservations WHERE chas='$i:00'")->fetch(); 
-  
+
 #print_r('00'.$chas);
 
   if (!$chas) {
@@ -238,8 +240,7 @@ for($i=9; $i<=22; $i++){
           <p>
             <i class="fas fa-envelope me-3 text-secondary"></i>
             19507@uktc-bg.com<br>
-            19523@uktc-bg.com<br>
-            19529@uktc-bg.com
+         
           </p>
          
           <p><i class="fas fa-print me-3 text-secondary"></i> + 359 89 507 0651</p>
