@@ -1,3 +1,5 @@
+
+
 .img-fluidd{
     width: 101%;
     height: 80%;
@@ -13,6 +15,14 @@ h3,p,ul{
 
 }
 
+.my-33{
+    padding-top: 50px;
+}
+
+.my-4, .my-3{
+    text-align: center;
+}
+
 .custom li{
     padding-bottom: 40px;
 }
@@ -20,3 +30,52 @@ h3,p,ul{
     padding-top: 40px;
 }
 
+
+  
+  .wave {
+    display: block;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background-color:#10707f;
+    transform: scale(1, 1);
+}
+
+.wave:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 80%;
+    width: 80%;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    right: -26%;
+    top: 20px;
+}
+
+.wave:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    width: 100%;
+    height: 300px;
+    background-color:#10707f;
+    left: -25%;
+    top: -240px;
+    clip-path: ellipse(100% 15% at -15% 100%);
+}
+
+.p1{
+    text-indent: 15px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.fig:hover, a:hover{
+    color: black;
+}
+
+.fig{
+    text-align: center;
+}
