@@ -32,9 +32,14 @@ body {
     background: rgb(6, 95, 105);
     cursor: pointer;
     border-radius: 80px;
-    border-color: rgb(105, 60, 60);
+    border-color: rgb(116, 72, 72);
     box-shadow: 3px 3px 5px 3px  rgb(3, 51, 57);  
+    transition: all 0.3s;
+}
 
+.button:hover{
+  background: rgb(3, 64, 71);
+  color: rgb(80, 201, 201);
 }
 
 
