@@ -13,10 +13,10 @@ h3,p,ul{
 
 }
 
-li{
-    padding-bottom: 30px;
+.custom li{
+    padding-bottom: 40px;
 }
-li:first-child {
-    padding-top: 40px; 
-  }
+.custom > li:first-child{
+    padding-top: 40px;
+}
 
