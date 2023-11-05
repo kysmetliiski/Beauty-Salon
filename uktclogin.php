@@ -1,5 +1,5 @@
 
-    <title>Be part of our community</title>
+    <title>Be part of our community - UktcBeautySalon</title>
     <link rel="stylesheet" type="text/css" href="login.css?v=<?= time() ?>">
 
     <style>
@@ -78,7 +78,17 @@ if ( isset( $_POST['submit'] ) ) {
 ?>	
 
 <html>
-<head></head>
+<head>
+<style>
+  a{
+    text-decoration:none;
+transition: color 0.5s ease;
+color: black;
+
+}
+
+
+</style>
 <body>
 
 	<form method="post">
@@ -169,26 +179,21 @@ if ( isset( $_POST['submit'] ) ) {
     <div class="col-12">
   <!-- Footer -->
 <footer class="text-center text-lg-start bg-white text-muted">
-  <!-- Section: Social media -->
+
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <!-- Left -->
     <div class="text-center">
       <span>Get connected with us on social networks:</span>
     </div>
-    <!-- Left -->
 
    
   </section>
-  <!-- Section: Social media -->
 
-  <!-- Section: Links  -->
   <section class="">
     <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
+    
       <div class="row mt-3">
-        <!-- Grid column -->
+        
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
             <i class="fas fa-gem me-3 text-secondary"></i>UktcBeautySalon
           </h6>
@@ -196,16 +201,9 @@ if ( isset( $_POST['submit'] ) ) {
            
           </p>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        
-       
-        <!-- Grid column -->
-
-        <!-- Grid column -->
+      
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
+       
           <h6 class="text-uppercase fw-bold mb-4">
             Полезни линкове
           </h6>
@@ -220,37 +218,34 @@ if ( isset( $_POST['submit'] ) ) {
             <a href="#!" class="text-reset">Имате нужда от помощ?</a>
           </p>
         </div>
-        <!-- Grid column -->
+   
 
-        <!-- Grid column -->
+
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
+     
           <h6 class="text-uppercase fw-bold mb-4">За контакти</h6>
           <p><i class=""></i> Перуша №4, гр.Правец, 2161</p>
           <p>
             <i class=""></i>
             19507@uktc-bg.com<br>
-            19523@uktc-bg.com<br>
-            19529@uktc-bg.com
+           
           </p>
          
           <p><i class=""></i> + 359 89 507 0651</p>
         </div>
-        <!-- Grid column -->
+       
       </div>
-      <!-- Grid row -->
+     
     </div>
   </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright -->
+ 
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
     All rights reversed © 2023
     <a class="text-reset fw-bold" href="#">uktcstudents.bg</a>
   </div>
-  <!-- Copyright -->
+ 
 </footer>
-<!-- Footer -->
+
 
 </div>
   </div>

@@ -76,8 +76,16 @@ h3,p,ul{
 
 .fig:hover, a:hover{
     color: black;
+    text-decoration: none;
+    transition: 0.5 ease;
+}
+
+a{
+text-decoration: dashed;
+color: #0f505a;
 }
 
 .fig{
     text-align: center;
+    padding-top: 10px;
 }
