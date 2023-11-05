@@ -50,31 +50,35 @@ if ( isset( $_POST['submit'] ) ) {
 	
 
 
-
+ 
   if ( $user && $user['type'] == 'superuser' ) {
 
-		$_SESSION['user'] = $user;
-		
-		header("location: schedule.php");
-		exit;
-		
-	
-	} else  if ( $user ) {
-
-		$_SESSION['user'] = $user;
-		
-		header("location: booking.html");
-		exit;
-		
-		
-	} else {
-		
-		echo "<b style='color:red;'>Невалидни потребителски данни</b><br><br>";
-	}
-  
-  //$isroot =$user->authorise('schedule.php');
-
-}
+    $_SESSION['user'] = $user;
+    
+    header("location: schedule.php");
+    exit;
+    
+    
+    }
+    
+    
+      else  if ( $user['type'] =='user' ) {
+    
+    $_SESSION['user'] = $user;
+    
+    header("location: booking.html");
+    exit;
+    
+    
+    } else {
+    
+    echo "<b style='color:red;'>Невалидни потребителски данни</b><br>";
+    }
+    
+    //$isroot =$user->authorise('schedule.php');
+    
+    }
+ 
 ?>	
 
 <html>
@@ -126,7 +130,7 @@ color: black;
 <form method="post">
   <!-- Email input -->
   <div class="form-container">
- <br />
+ <br/>
 
 
  <div class="container">
@@ -145,9 +149,10 @@ color: black;
     <br />
     <button type="submit" name="submit" value="1" role="button" 
     (click)="login($event, username, password)"
-     class="btn btn-info w100">Изпрати</button >
+     class="btn btn-info w100">Изпрати</button > <br>
+     <div class="caution">
+  
  
-    
   </section>
   </div>
   </div>
