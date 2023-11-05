@@ -53,6 +53,11 @@ function _p( $text )
  
    ?>
 
+
+
+
+            <link rel="stylesheet" type="text/css" href="veselin.css?v=18">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -98,61 +103,57 @@ function _p( $text )
 <form method = "post">
 
             <div class="row form-group">
-                <label for="date" class="col-sm-1 col-form-label">Дата</label>
                 <div class="col-sm-4">
                     <div class="input-group date" id="datepicker">
                         <input type="text" name="datachas" class="form-control">
                         <span class="input-group-append">
                             <span class="input-group-text bg-white d-block">
                                 <i class="fa fa-calendar"></i>
-                            </span>
-                        </span>
-                    </div>
-                </div>
-            </div>
+       </span>
+        </span>
+          </div>          
+           </div>
+           </div>
       
     </section>
+
+   
+    <label for="date" class="col-sm-1 col-form-label">Дата</label>
 
     <script type="text/javascript">
         $(function() {
             $('#datepicker').datepicker();
         });
     </script>
-  
+   </div>
 </div>
 
 
 
    Резервирайте своя час : 
     <select name="chas"> 
-       
-    
-    
-        <option value="select">Изберете:</option>
-
+    <option value="select">Изберете:</option>
       
+     
 
+                            <?php
+                            for($i=9; $i<=22; $i++){
+                              $sql = "SELECT * FROM vreservations WHERE chas='$i:00'";
 
+                              $chas = $connection->query("SELECT * FROM vreservations WHERE chas='$i:00'")->fetch(); 
 
+                            #print_r('00'.$chas);
 
-<?php
-for($i=9; $i<=22; $i++){
-  $sql = "SELECT * FROM vreservations WHERE chas='$i:00'";
-
-  $chas = $connection->query("SELECT * FROM vreservations WHERE chas='$i:00'")->fetch(); 
-
-#print_r('00'.$chas);
-
-  if (!$chas) {
-  ?>
-        <option value="<?=$i?>:00" id="12" name="reservation"><?=$i?>:00</option>
-        <?php }} ?>
+                              if (!$chas) {
+                              ?>
+                                    <option value="<?=$i?>:00" id="12" name="reservation"><?=$i?>:00</option>
+                                    <?php }} ?>
        
         
      <input type="submit" name="submit" value="Изпрати"><br>
     </select>
     </form>
-
+    
 
 
     <div class="col-12">
