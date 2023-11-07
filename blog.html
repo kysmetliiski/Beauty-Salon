@@ -13,28 +13,9 @@
 <link rel="stylesheet" href="blog.css?v=19">
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="snimki/logo.png" class="rounded float-left" alt="uktclogo" width="40" height="40"style="vertical-align:middle;margin:6px 0px">
-        <a class="navbar-brand" href="UktcBeautySalon.html">  Добре дошли</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="aboutus.html">За нас<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="guestbooking.html">Резервирай час</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="#">Блог</a>
-            </li>
-          </ul>
-        
-        </div>
-      </nav>
+  <?php 
+  include ("navbar.html");
+  ?>
 
 <div class="wave"></div>
   
@@ -71,21 +52,21 @@
    
 
     <div class="col-md-4 col-sm-6 mb-4">
-      <a href="http://127.0.0.1/kursova%20rabota/blogHairCare.html">
+      <a href="index.php?controller=hairblog">
             <img class="img-fluidd" src="snimki/hair.jpg.webp" alt="hair procedures">
             <figcaption class="fig">Грижа за косата</figcaption>
    </a>
     </div>
 
     <div class="col-md-4 col-sm-6 mb-4">
-      <a href="http://127.0.0.1/kursova%20rabota/acne.html">
+      <a href="index.php?controller=acneblog">
             <img class="img-fluidd" src="snimki/photoshop.jpeg.webp" alt= "woman acne picture" >
             <figcaption class="fig">Борба с акнето</figcaption>
           </a>
     </div>
 
     <div class="col-md-4 col-sm-6 mb-4">
-      <a href="http://127.0.0.1/kursova%20rabota/perfumes.html">
+      <a href="index.php?controller=perfumeblog">
             <img class="img-fluidd" src="snimki/perfume.jpg.webp" alt="perfumes">
             <figcaption class="fig">Силата на арабските парфюми</figcaption>
           </a>

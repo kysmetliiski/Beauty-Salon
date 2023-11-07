@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Here you're always welcome</title>
+	<title>UktcBeautySalon - Here you're always welcome</title>
   <link rel="stylesheet" href="../stil.css?v=<?= time() ?>">
 	
 </head>
@@ -14,28 +14,10 @@
 </style>
 <body>
 	
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="snimki/logo.png" class="rounded float-left" alt="uktclogo" width="40" height="40"style="vertical-align:middle;margin:6px 0px">
-        <a class="navbar-brand" href="UktcBeautySalon.html">  Добре дошли</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="aboutus.html">За нас<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="guestbooking.html">Резервирай час</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="blog.html">Блог</a>
-            </li>
-          </ul>
-        
-        </div>
-      </nav>
+
+     <?php 
+     include ("navbar.html");
+     ?>
 
 </body>
 </html>
@@ -204,64 +186,3 @@ left: 200px;">
 </html> 
 
 <form method = "post" action = "btylog.php">
-<?php
-$servername = "127.0.0.1";
-$username = "root";
-$password = "veselin7";
-$database = "beauty_schema";
-
-try {
-	$connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-	$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	
-} catch(PDOException $e) {
-	echo "Connection failed: " . $e->getMessage();
-}
-?>
-
-
-
-
-
-<?php
-if ( isset( $_POST['submit'] ) ) {
-
-	// записване на данните от полетата в променливи за по-удобно
-
-	$name = $_POST['name'];
-	$lname = $_POST['lname'];
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-	
-	
-	$error = false;
-	if (!$name){
-	   echo "greshni danni";
-	   $error = true;
-	}
-	if (!$lname){
-		echo "greshni danni";
-		$error = true;
-	}
-	if (!$email){
-	   echo "greshni danni";
-	   $error = true;
-	}
-
-	if (!$password){
-		echo "greshni danni";
-		$error = true;
-	 }
- 
-	 
-	
-
-
-	// INSERT заявка към базата, с която се записват полетата
-
-	$sql = "INSERT INTO uktclog ( name,lname, email, password) VALUES (?,?,?,?)";
-	$connection->prepare($sql)->execute([$name,$lname, $email, $password]);
-}
-
-
-?>

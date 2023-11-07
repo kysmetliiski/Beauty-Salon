@@ -15,71 +15,7 @@
 <body>
    
                   
-<?php 
-// стартиране на сесия ( ще трябва по-долу )
-session_start();
 
-$servername = "127.0.0.1";
-$username = "root";
-$password = "veselin7";
-$database = "beauty_schema";
-
-
-
-try {
-  $connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-  $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  // echo "Connected successfully";
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
-}
-
-if ( isset( $_POST['submit'] ) ) {
-
-	// записване на данните от полетата в променливи за по-удобно
-
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-	
-	
-	// зареждане от базата на потребител с въведените от формата име и парола
-	
-	$stmt = $connection->prepare("SELECT * FROM uktclog WHERE email = ? AND password = ?"); 
-	$stmt->execute([ $email, $password ]); 
-	$user = $stmt->fetch();
-	
-
-
- 
-  if ( $user && $user['type'] == 'superuser' ) {
-
-    $_SESSION['user'] = $user;
-    
-    header("location: schedule.php");
-    exit;
-    
-    
-    }
-    
-    
-      else  if ( $user['type'] =='user' ) {
-    
-    $_SESSION['user'] = $user;
-    
-    header("location: booking.html");
-    exit;
-    
-    
-    } else {
-    
-    echo "<b style='color:red;'>Невалидни потребителски данни</b><br>";
-    }
-    
-    //$isroot =$user->authorise('schedule.php');
-    
-    }
- 
-?>	
 
 <html>
 <head>
@@ -99,31 +35,9 @@ color: black;
 	
 	</form>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="snimki/logo.png" class="rounded float-left" alt="uktclogo" width="40" height="40"style="vertical-align:middle;margin:6px 0px">
-    <a class="navbar-brand" href="UktcBeautySalon.html">  Добре дошли</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="aboutus.html">За нас<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="guestbooking.html">Резервирай час</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link" href="blog.html">Блог </a>
-        </li>
-        <li class="nav-item dropdown">
-
-</li>
-      </ul>
-     
-    </div>
-  </nav>
+ <?php 
+ include("navbar.html");
+ ?>
 
 <div class="row">
     <div class="col">

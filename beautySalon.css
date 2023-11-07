@@ -9,18 +9,11 @@ body {
   overflow: hidden;
   }
 
-   .navbar-brand{
-    padding-left: 15px;
-}
+ 
 .text-center{
   text-align: center;
 }
-.photo{
-    width: 4%;
-    height: 2%;
-    float: left;    
-    padding-right: 15px;
-} 
+
 .button{
     padding-top: 10px;
     font-family: 'Raleway', sans-serif;
