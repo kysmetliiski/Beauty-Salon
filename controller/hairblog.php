@@ -6,7 +6,7 @@ class hairblog extends Controller
     {
         
 
-        include("blogHairCare.html");
+        $this->view->render("view/blogHairCare.html");
     }
 }
 

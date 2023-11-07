@@ -6,7 +6,7 @@ class perfumeblog extends Controller
     {
         
 
-        include("perfumes.html");
+        $this->view->render("view/perfumes.html");
     }
 }
 

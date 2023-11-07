@@ -6,7 +6,7 @@ class aboutus extends Controller
     {
         
 
-        include("aboutus.html");
+        $this->view->render( "view/aboutus.html" );
     }
 }
 

@@ -58,7 +58,7 @@ class Registration extends Controller
 
 
 
-		include("btylog.php");
+		$this->view->render("view/btylog.html");
 	}
 }
 

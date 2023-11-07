@@ -6,16 +6,17 @@ class Login extends Controller
     {
         
 // стартиране на сесия ( ще трябва по-долу )
-session_start();
+                session_start();
 
-$servername = "127.0.0.1";
-$username = "root";
-$password = "veselin7";
-$database = "beauty_schema";
+                $servername = "127.0.0.1";
+                $username = "root";
+                $password = "veselin7";
+                $database = "beauty_schema";
 
 
 
-try {
+try 
+{
   $connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
   $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   // echo "Connected successfully";
@@ -23,54 +24,53 @@ try {
   echo "Connection failed: " . $e->getMessage();
 }
 
-if ( isset( $_POST['submit'] ) ) {
+      if ( isset( $_POST['submit'] ) ) {
 
-	// записване на данните от полетата в променливи за по-удобно
+        // записване на данните от полетата в променливи за по-удобно
 
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-	
-	
-	// зареждане от базата на потребител с въведените от формата име и парола
-	
-	$stmt = $connection->prepare("SELECT * FROM uktclog WHERE email = ? AND password = ?"); 
-	$stmt->execute([ $email, $password ]); 
-	$user = $stmt->fetch();
-	
-
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        
+        
+        // зареждане от базата на потребител с въведените от формата име и парола
+        
+        $stmt = $connection->prepare("SELECT * FROM uktclog WHERE email = ? AND password = ?"); 
+        $stmt->execute([ $email, $password ]); 
+        $user = $stmt->fetch();
+        
+                                      
 
  
-  if ( $user && $user['type'] == 'superuser' ) {
+          if ( $user && $user['type'] == 'superuser' ) 
+              {
 
-    $_SESSION['user'] = $user;
-    
-    header("location: schedule.php");
-    exit;
-    
-    
-    }
-    
-    
-      else  if ( $user['type'] =='user' ) {
-    
-    $_SESSION['user'] = $user;
-    
-    header("location: booking.html");
-    exit;
-    
-    
-    } else {
-    
-    echo "<b style='color:red;'>Невалидни потребителски данни</b><br>";
-    }
-    
-    //$isroot =$user->authorise('schedule.php');
-    
-    }
+                  $_SESSION['user'] = $user;
+                  
+                  header("location: schedule.php");
+                  exit; 
+              }
+
+         else  if ( $user['type'] =='user' )
+                   {
+                
+                $_SESSION['user'] = $user;
+                
+                header("location: booking.html");
+                exit;
+                   } 
+
+          else
+                  {
+                echo "<b style='color:red;'>Невалидни потребителски данни</b><br>";
+                  }
+                
+                //$isroot =$user->authorise('schedule.php');
+                
+                                        }
  
 
 
-        include("uktclogin.php");
+                                        $this->view->render("view/uktclogin.html");
     }
 }
 

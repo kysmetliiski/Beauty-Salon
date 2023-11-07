@@ -6,7 +6,7 @@ class acneblog extends Controller
     {
         
 
-        include("acne.html");
+        $this->view->render("view/acne.html");
     }
 }
 

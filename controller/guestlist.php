@@ -6,7 +6,7 @@ class Guestlist extends Controller
     {
         
 
-        include("guestbooking.html");
+        $this->view->render("view/guestbooking.html");
     }
 }
 
