@@ -2,11 +2,16 @@
 
 class footer extends Controller
 {
+    function __construct()
+    {
+        
+        parent::__construct();
+    }
     public function index()
     {
         
 
-        $this->view->render("view/footer.html");
+        $this->view->render("footer.html");
     }
 }
 

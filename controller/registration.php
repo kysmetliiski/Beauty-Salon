@@ -2,6 +2,11 @@
 
 class Registration extends Controller
 {
+	function __construct()
+    {
+        
+        parent::__construct();
+    }
     public function index()
     {
 		
@@ -58,7 +63,7 @@ class Registration extends Controller
 
 
 
-		$this->view->render("view/btylog.html");
+		$this->view->render("btylog.html");
 	}
 }
 

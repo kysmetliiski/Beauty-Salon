@@ -2,11 +2,18 @@
 
 class aboutus extends Controller
 {
+
+    function __construct()
+    {
+        
+        parent::__construct();
+    }
+    
     public function index()
     {
         
 
-        $this->view->render( "view/aboutus.html" );
+        $this->view->render( "aboutus.html" );
     }
 }
 

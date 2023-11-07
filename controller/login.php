@@ -2,6 +2,13 @@
 
 class Login extends Controller
 {
+
+    function __construct()
+    {
+        
+        parent::__construct();
+    }
+
     public function index()
     {
         
@@ -42,27 +49,27 @@ try
 
  
           if ( $user && $user['type'] == 'superuser' ) 
-              {
+                          {
 
                   $_SESSION['user'] = $user;
                   
                   header("location: schedule.php");
                   exit; 
-              }
+                          }
 
          else  if ( $user['type'] =='user' )
-                   {
+                          {
                 
                 $_SESSION['user'] = $user;
                 
                 header("location: booking.html");
                 exit;
-                   } 
+                          } 
 
           else
-                  {
+                           {
                 echo "<b style='color:red;'>Невалидни потребителски данни</b><br>";
-                  }
+                           }
                 
                 //$isroot =$user->authorise('schedule.php');
                 
@@ -70,7 +77,7 @@ try
  
 
 
-                                        $this->view->render("view/uktclogin.html");
+                                        $this->view->render("uktclogin.html");
     }
 }
 

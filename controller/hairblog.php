@@ -2,11 +2,16 @@
 
 class hairblog extends Controller
 {
+    function __construct()
+    {
+        
+        parent::__construct();
+    }
     public function index()
     {
         
 
-        $this->view->render("view/blogHairCare.html");
+        $this->view->render("blogHairCare.html");
     }
 }
 

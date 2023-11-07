@@ -2,11 +2,16 @@
 
 class Guestlist extends Controller
 {
+    function __construct()
+    {
+        
+        parent::__construct();
+    }
     public function index()
     {
         
 
-        $this->view->render("view/guestbooking.html");
+        $this->view->render("guestbooking.html");
     }
 }
 
