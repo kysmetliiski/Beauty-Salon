@@ -7,9 +7,10 @@ class blog extends Controller
         
         parent::__construct();
     }
+
     public function index()
     {
-        
+        $a = 200;    
 
         $this->view->render("blog.html");
     }
