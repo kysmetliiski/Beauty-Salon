@@ -9,7 +9,7 @@ class Registration extends Controller
     }
     public function index()
     {
-		
+		$err = "";
 
 		$servername = "127.0.0.1";
 		$username = "root";
@@ -36,20 +36,20 @@ class Registration extends Controller
 			
 			$error = false;
 			if (!$name){
-			echo "greshni danni";
+				$err=  "<b style='color:red;'>Грешни данни!</b><br>";
 			$error = true;
 			}
 			if (!$lname){
-				echo "greshni danni";
+				$err= "<b style='color:red;'>Грешни данни!</b><br>";
 				$error = true;
 			}
 			if (!$email){
-			echo "greshni danni";
+				$err= "<b style='color:red;'>Грешни данни!</b><br>";
 			$error = true;
 			}
 
 			if (!$password){
-				echo "greshni danni";
+				$err= "<b style='color:red;'>Грешни данни!</b><br>";
 				$error = true;
 			}
 
@@ -60,10 +60,14 @@ class Registration extends Controller
 		}
 
 
+			$err = "<b style='color:red;'>Грешни данни!</b><br>";
+		$params = array
+		(
+			  "error" => $err
+		);
 
 
-
-		$this->view->render("btylog.html");
+		$this->view->render("btylog.html", $params);
 	}
 }
 

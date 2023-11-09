@@ -11,6 +11,8 @@ class Login extends Controller
 
     public function index()
     {
+
+      $error = "";
         
 // стартиране на сесия ( ще трябва по-долу )
                 session_start();
@@ -57,7 +59,7 @@ try
                   exit; 
                           }
 
-         else  if ( $user['type'] =='user' )
+         else  if ( $user && $user['type'] =='user' )
                           {
                 
                 $_SESSION['user'] = $user;
@@ -68,7 +70,11 @@ try
 
           else
                            {
-                echo "<b style='color:red;'>Невалидни потребителски данни</b><br>";
+                
+  
+                            $error = "<b style='color:red;'>Невалидни потребителски данни</b><br>";
+
+          
                            }
                 
                 //$isroot =$user->authorise('schedule.php');
@@ -76,10 +82,20 @@ try
                                         }
  
 
-
-                                        $this->view->render("uktclogin.html");
+                                      
+                                        $params = array
+                                              (
+                                                    "err" => $error 
+                                              );
+                          
+                             
+                                        $this->view->render("uktclogin.html", $params);
     }
 }
 
 
 ?> 
+
+
+
+

@@ -65,8 +65,7 @@ color: black;
     (click)="login($event, username, password)"
      class="btn btn-info w100">Изпрати</button > <br>
      <div class="caution">
-  
- 
+
   </section>
   </div>
   </div>
