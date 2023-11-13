@@ -2,7 +2,10 @@
 
 class Model
 {
-    
+    function getRecords()
+    {
+        
+    }
 
 }
 

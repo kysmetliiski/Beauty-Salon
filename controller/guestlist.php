@@ -12,8 +12,7 @@ class Guestlist extends Controller
         
 
         $params = array( 
-            "view_var" => $a,
-            "data" -> $data,
+         
         );
 
         $this->view->render("guestbooking.html", $params);
