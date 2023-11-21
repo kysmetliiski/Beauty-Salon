@@ -34,7 +34,7 @@ class Login extends Controller
         
      
         
-        $user=$this->model->fetch("SELECT * FROM uktclog WHERE email = ? AND password = ?",[ $email, $password ]);
+        $user = $this->model->fetch("SELECT * FROM uktclog WHERE email = ? AND password = ?",[ $email, $password ]);
                                       
 
  
@@ -43,7 +43,7 @@ class Login extends Controller
 
                   $_SESSION['user'] = $user;
                   
-                  header("location: schedule.php");
+                  header("location: controller/schedule.php");
                   exit; 
                           }
 

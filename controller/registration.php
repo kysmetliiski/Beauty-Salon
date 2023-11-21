@@ -55,8 +55,8 @@ class Registration extends Controller
 
 	// INSERT заявка към базата, с която се записват полетата
 
-			$sql = "INSERT INTO uktclog ( name,lname, email, password) VALUES (?,?,?,?)";
-			$connection->prepare($sql)->execute([$name,$lname, $email, $password]);
+			
+			$this->model->datasave("INSERT INTO uktclog ( name,lname, email, password) VALUES (?,?,?,?)",[$name,$lname, $email, $password]);
 		}
 
 

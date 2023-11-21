@@ -8,6 +8,7 @@ class Model
     public $password;
     public $database;
     public $connection;
+
     
 
     function __construct()
@@ -42,6 +43,10 @@ class Model
         $stmt->execute($params); 
         return $stmt->fetch();
         
+    }
+    function datasave($query,$params)
+    {
+			return $this->$connection->prepare($query)->execute($params);
     }
 
 
