@@ -32,7 +32,14 @@ $data = $stmt->fetchAll();
 $nextdate = date('Y-m-d', strtotime('+1 day', strtotime($date)));
 $prevdate = date('Y-m-d', strtotime('-1 day', strtotime($date)));
 
-?>
+
+// $data = $this->model->fetchAll("
+// SELECT vreservations.*, uktclog.name, uktclog.lname
+// FROM vreservations 
+// LEFT JOIN uktclog ON uktclog.id = vreservations.user_id
+// WHERE datachas=?
+// ",[$date]);
+// ?>
 
 
 

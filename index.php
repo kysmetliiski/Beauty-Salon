@@ -6,6 +6,7 @@ if (!$c)
 $c = 'Home';
 
 include("controller/view.php");
+include("model/model.php");
 include("controller/controller.php");
 include("controller/$c.php");
 
