@@ -1,6 +1,6 @@
 <?php 
 
-class blog extends Controller
+class List extends Controller
 {
     function __construct()
     {
@@ -10,8 +10,9 @@ class blog extends Controller
 
     public function index()
     {
+        
 
-        $this->view->render("blog.html");
+        $this->view->render("booking.html");
     }
 }
 

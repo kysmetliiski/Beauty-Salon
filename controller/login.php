@@ -43,7 +43,7 @@ class Login extends Controller
 
                   $_SESSION['user'] = $user;
                   
-                  header("location: controller/schedule.php");
+                  header("location: index.php?controller=schedule");
                   exit; 
                           }
 
@@ -52,7 +52,7 @@ class Login extends Controller
                 
                 $_SESSION['user'] = $user;
                 
-                header("location: booking.html");
+                header("location: index.php?controller=list");
                 exit;
                           } 
 
