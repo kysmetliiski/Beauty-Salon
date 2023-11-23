@@ -1,13 +1,12 @@
 <?php 
 
-class List extends Controller
+class mylist extends Controller
 {
     function __construct()
     {
         
         parent::__construct();
     }
-
     public function index()
     {
         

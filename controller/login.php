@@ -52,7 +52,7 @@ class Login extends Controller
                 
                 $_SESSION['user'] = $user;
                 
-                header("location: index.php?controller=list");
+                header("location: index.php?controller=mylist");
                 exit;
                           } 
 

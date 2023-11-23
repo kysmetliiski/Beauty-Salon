@@ -9,7 +9,7 @@ class schedule extends Controller
     public function index()
     {
 
-      $user = $this->model->fetch("SELECT * FROM uktclog WHERE email = ? AND password = ?",[ $email, $password ]);
+      $user = $this->model->fetch("SELECT * FROM uktclog WHERE email = ? AND password = ?",[ $this->email, $this->password ]);
 
 
 $date = @$_GET['date'];
