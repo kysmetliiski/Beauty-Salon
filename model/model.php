@@ -41,7 +41,7 @@ class Model
     {
         $stmt = $this->connection->prepare($query); 
         $stmt->execute($params); 
-        return $stmt->fetch();
+        return $stmt->fetchAll();
         
     }
     function datasave($query,$params)

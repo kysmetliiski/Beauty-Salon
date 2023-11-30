@@ -1,28 +1,4 @@
 <?php
-$servername = "127.0.0.1";
-$username = "root";
-$password = "veselin7";
-$database = "beauty_schema";
-try {
-	$connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-	$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	// echo "Connected successfully";
-} catch(PDOException $e) {
-	echo "Connection failed: " . $e->getMessage();
-}
-$date = @$_GET['date'];
-if ( !$date )
-    $date = date("Y-m-d");
-$stmt = $connection->prepare("
-    SELECT vreservations.*, uktclog.name, uktclog.lname
-    FROM vreservations 
-    LEFT JOIN uktclog ON uktclog.id = vreservations.user_id
-    WHERE datachas=?
-");
-$stmt->execute([$date]); 
-$data = $stmt->fetchAll();
-$nextdate = date('Y-m-d', strtotime('+1 day', strtotime($date)));
-$prevdate = date('Y-m-d', strtotime('-1 day', strtotime($date)));
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +17,7 @@ $prevdate = date('Y-m-d', strtotime('-1 day', strtotime($date)));
       <th scope="col"></th>
  <a href="">
 </a>
-<th scope="col"> <a href='schedule.php?date=<?= $prevdate ?>'><--</a>  <?= $date ?>  <a href='schedule.php?date=<?= $nextdate ?>'>--></a></th>
+<th scope="col"> <a href='index.php?controller=schedule&date=<?= $prevdate ?>'><--</a>  <?= $date ?>  <a href='index.php?controller=schedule&date=<?= $nextdate ?>'>--></a></th>
 <th scope="col">Name</th>
 <th scope="col">Reservation</th>
 </tr>
@@ -51,6 +27,7 @@ $prevdate = date('Y-m-d', strtotime('-1 day', strtotime($date)));
 <?php 
 $i = 1;
 foreach( $data as $item ) {
+  
 ?>
 <tr>
 <th scope="row"><?= $i ?></th>
