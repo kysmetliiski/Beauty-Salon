@@ -14,8 +14,7 @@ class Login extends Controller
 
       $error = "";
         
-// стартиране на сесия ( ще трябва по-долу )
-                session_start();
+       session_start();
 
               
 
@@ -24,14 +23,10 @@ class Login extends Controller
 
       if ( isset( $_POST['submit'] ) ) {
 
-        // записване на данните от полетата в променливи за по-удобно
 
         $email = $_POST['email'];
         $password = $_POST['password'];
-        
-        
-        // зареждане от базата на потребител с въведените от формата име и парола
-        
+                
      
         
         $user = $this->model->fetch("SELECT * FROM uktclog WHERE email = ? AND password = ?",[ $email, $password ]);
@@ -64,12 +59,10 @@ class Login extends Controller
 
           
                            }
-                
-                //$isroot =$user->authorise('schedule.php');
-                
+                                
                                         }
  
-
+ 
                                       
                                         $params = array
                                               (

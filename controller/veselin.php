@@ -11,8 +11,7 @@ class veselin extends Controller
     
     public function index()
     {
-       
-
+       session_start();
     
         $servername = "127.0.0.1";
         $username = "root";
@@ -36,7 +35,7 @@ class veselin extends Controller
             $chas = $_POST['chas'];
             $datachas = $_POST['datachas'];      
           
-           $user_id     = @$_SESSION['user']['id'];
+           $user_id = @$_SESSION['user']['id'];
        
        
        function _p( $text )
@@ -55,17 +54,42 @@ class veselin extends Controller
              $sql = "INSERT INTO vreservations( user_id,  chas, datachas) VALUES (?,?,?)";
              $connection->prepare($sql)->execute([ $user_id,  $chas, $new_date]);
        
-       
-       
+        
+             header("location:index.php?controller=thankyou");
        
          }
+
+
+              $hours = array();
+              $datepick = ( !isset( $_GET['datepick'] ) ? date('m/d/Y') :  $_GET['datepick'] );
+         
+                            for($i=9; $i<=22; $i++){
+
+                              $mysqldate = date( "Y-m-d", strtotime($datepick));
+
+                            
+
+      $chas = $this->model->fetch("SELECT * FROM vreservations WHERE chas='$i:00' AND  datachas = ? ",array($mysqldate));
+
+        
+                              if (!$chas) {
+                                    $hours[] = "$i:00";
+                               }
+
+                            }
+       
         
          
-       
-
-        $this->view->render( "veselin.html");
+      //  echo "<pre>";
+      //  print_r($hours);
+        $this->view->render( "veselin.html", array(
+          "hours" => $hours,
+          "datepick" => $datepick
+        ));
     }
 }
+
+
 
 
 ?>

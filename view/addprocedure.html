@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add procedure</title>
+</head>
+<style>
+   .fieldd{
+    margin-bottom: 10px;
+   }
+   .container{
+    background-color: black;
+   }
+</style>
+<body>
+    <?php 
+    include("navbar.html");
+    echo $err;
+    ?>
+    <form method="post">
+        <div class="container">
+        <input type="text" name="title" id="" class="fieldd" placeholder="title" required> <br>
+        <input type="text" name="description" id="" class="fieldd" placeholder="description" required> <br>
+        <input type="text" name="price" id="" class="fieldd" placeholder="price" required> <br>
+        <button type="submit" name="submit" value="submit">submit</button>
+        </div>
+    </form>
+</body>
+</html>

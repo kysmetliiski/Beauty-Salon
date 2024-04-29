@@ -15,6 +15,6 @@ include("controller/$c.php");
 
 $obj = new $c();
 
-$obj->index();
+$obj->index(); 
 
 ?>

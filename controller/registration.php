@@ -26,48 +26,36 @@ class Registration extends Controller
 
 		if ( isset( $_POST['submit'] ) ) {
 
-			// записване на данните от полетата в променливи за по-удобно
 
 			$name = $_POST['name'];
 			$lname = $_POST['lname'];
 			$email = $_POST['email'];
 			$password = $_POST['password'];
-			
+			$h_password = password_hash($password, PASSWORD_DEFAULT);	
 			
 			$error = false;
-			if (!$name){
-				$err=  "<b style='color:red;'>Грешни данни!</b><br>";
-			$error = true;
+			if(!preg_match('/@/', $email) || !preg_match('/[A-Za-z]/',$email)) {
+				echo "<b style='color:red;'>Имейлът задължително трябва да съдържа '@'
+				и да бъде на латиница,за да бъде приет като валиден.</br> ";
 			}
-			if (!$lname){
-				$err= "<b style='color:red;'>Грешни данни!</b><br>";
-				$error = true;
+			if (strlen($password)< 6 )
+            {
+				echo "<b style='color:red;'>Паролата трябва да бъде не по-малко от 6 символа.</b>";
 			}
-			if (!$email){
-				$err= "<b style='color:red;'>Грешни данни!</b><br>";
-			$error = true;
-			}
-
-			if (!$password){
-				$err= "<b style='color:red;'>Грешни данни!</b><br>";
-				$error = true;
-			}
-
-	// INSERT заявка към базата, с която се записват полетата
-
-			
-			$this->model->datasave("INSERT INTO uktclog ( name,lname, email, password) VALUES (?,?,?,?)",[$name,$lname, $email, $password]);
+            elseif (!preg_match('/[A-Za-z0-9А-Яа-я]/u', $password) || !preg_match('/[0-9]/', $password)) 
+            {
+                echo "<b style='color:red;'>Паролата трябва да бъде комбинация от букви и цифри.</b>";
+            }		
+	$this->model->datasave("INSERT INTO uktclog ( name,lname, email, password) 
+			VALUES (?,?,?,?)",[$name,$lname, $email, $h_password]);
 		}
-
-
-			$err = "<b style='color:red;'>Грешни данни!</b><br>";
 		$params = array
 		(
 			  "error" => $err
 		);
 
-
-		$this->view->render("btylog.html", $params);
+    
+		$this->view->render("registration.html", $params); 
 	}
 }
 

@@ -1,12 +1,5 @@
 
-<form method = "post" action = "veselin.php">
-    <?php
-   
-
-
-
             <link rel="stylesheet" type="text/css" href="veselin.css?v=18">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,65 +14,84 @@
    <script src=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  
+  <style>
+    h1{
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        font-weight: 300;
+    }
+    .move{
+        display: flex;
+        justify-content: center;
+        margin-left: 240px;
+    }
+  </style>
 </head>
 <body>
     <?php 
 include("navbar.html");
 ?>
-<div class="row">
-<div class = col-6>
+<form method = "post" action = "index.php?controller=veselin">
+<h1>Изберете дата и час за вашата процедура</h1>
+<div class="move">
+<div class="row"> 
+<div class = col-19>
 <form method = "post">
-
             <div class="row form-group">
             <div class="col-sm-4">
             <div class="input-group date" id="datepicker">
-               <input type="text" name="datachas" class="form-control">
-                    <span class="input-group-append">
-                    <span class="input-group-text bg-white d-block">
-                    <i class="fa fa-calendar"></i>
-                    </span>
-                    </span>
+               <p   style="padding-left:15px; padding-right:10px ;">Дата: </p>
+                <input type="textarea" name="datachas" class="form-control">
+                <span class="input-group-append">
+                <span class="input-group-text bg-white d-block">
+                <i class="fa fa-calendar"></i>
+                <input type="textarea" name="datachas" value="<?=$datepick?>">
+                </span> 
+                </span>
             </div>          
             </div>
             </div>
+</div>
       
     
 
-   
-    <label for="date" class="col-sm-1 col-form-label">Дата</label>
+    
 
     <script type="text/javascript">
         $(function() {
-            $('#datepicker').datepicker();
+            // $('#datepicker').datepicker();
+
+            $('#datepicker').datepicker({
+             }).on('changeDate', function(e) {   
+
+                let pickedDate = $("input").val(); 
+                   
+            window.location.href=("http://127.0.0.1/kursova%20rabota/index.php?controller=veselin&datepick=" + pickedDate);
+            });
+
         });
     </script>
    </div>
 </div>
 
-
+<button type="submit" name="submit" value="Изпрати" style="float: right;">Изпрати</button> <br>
 
    Резервирайте своя час : 
     <select name="chas"> 
-    <option value="select">Изберете:</option>
+    <option value="select" aria-required="">Изберете:</option> <br>
       
-     
 
-                            <?php
-                            for($i=9; $i<=22; $i++){
-                              $sql = "SELECT * FROM vreservations WHERE chas='$i:00'";
 
-                              $chas = $connection->query("SELECT * FROM vreservations WHERE chas='$i:00'")->fetch(); 
-
-                            #print_r('00'.$chas);
-
-                              if (!$chas) {
-                              ?>
-                                    <option value="<?=$i?>:00" id="12" name="reservation"><?=$i?>:00</option>
-                                    <?php }} ?>
+        
+                            <?php 
+                            foreach($hours as $h){
+                            ?>
+                                    <option value="<?=$h?>" id="12" name="reservation"><?=$h?></option>
+                                    <?php } ?>
        
         
-     <input type="submit" name="submit" value="Изпрати"><br>
+     <br>
     </select>
     </form>
     

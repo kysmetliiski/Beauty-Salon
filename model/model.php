@@ -28,7 +28,7 @@ class Model
             }
     }
 
-    function fetch($query,$params)
+    function fetch($query,$params = array())
     {
         $stmt = $this->connection->prepare($query); 
         $stmt->execute($params); 
@@ -37,7 +37,7 @@ class Model
     }
 
     
-    function fetchAll($query,$params)
+    function fetchAll($query,$params = array())
     {
         $stmt = $this->connection->prepare($query); 
         $stmt->execute($params); 
@@ -46,12 +46,17 @@ class Model
     }
     function datasave($query,$params)
     {
-			return $this->$connection->prepare($query)->execute($params);
+			return $this->connection->prepare($query)->execute($params);
+    }
+
+    function query($query,$params)
+    {
+			return $this->connection->prepare($query)->execute($params);
     }
 
 
     function getRecords()
-    {
+    { 
         
     }
 

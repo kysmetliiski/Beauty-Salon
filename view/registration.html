@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UktcBeautySalon - Here you're always welcome</title>
+  <link rel="stylesheet" href="../stil.css?v=<?= time() ?>">
+  <link rel="icon" type="image/x-icon" href="snimki/favicon.jpg.avif">
+
+	
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+  
+</style>
+<body>
+	
+
+     <?php 
+     include ("navbar.html");
+     echo $error
+     ?>
+
+</body>
+</html>
+
+
+
+<div class="container">
+  <div id="block">
+    <div class='row'>
+      <div class='col-3'></div>
+	      <div class='col-6'>
+
+
+  <br>
+<form method="post">
+            <label>Име:</label><br>
+            <input type="text" name="name" class='form-control' required><br>
+            <label>Фамилия:</label><br>
+            <input type="text" name="lname"  class='form-control' required><br>
+            <label>E-mail:</label><br>
+            <input type="text" name="email"  class='form-control' required><br>
+            <label>Парола</label><br>
+            <input type="password" name="password"  class='form-control' required><br><br>
+            <input type="submit" name="submit" value="Изпрати" class='btn btn-info w-100'>
+</form>
+
+
+    
+
+</div>
+</div>
+</div>
+</div>
+<a href="index.php?controller=login" style="text-decoration: none; color:black; display: flex; justify-content: center;">Вече сте регистрирани? Влезте в профила си</a>
+
+
+<?php 
+include ("footer.html");
+?>
+
+
+
+      
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+</html> 
+
+<form method = "post" action = "registration.php">

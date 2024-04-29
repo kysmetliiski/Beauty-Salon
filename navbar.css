@@ -1,0 +1,16 @@
+*
+{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-weight: 300;
+}   
+         .navbar-brand
+     {
+    padding-left: 15px;
+     }
+     .photo
+     {
+    width: 4%;
+    height: 2%;
+    float: left;    
+    padding-right: 15px;
+    } 

@@ -10,12 +10,13 @@ class Guestlist extends Controller
     public function index()
     {
         
+        $data = $this->model->fetchAll("SELECT * FROM services", array());
 
-        $params = array( 
-         
-        );
+        
 
-        $this->view->render("guestbooking.html", $params);
+        $this->view->render("guestbooking.html", array(
+            "data" => $data
+        ));
     }
 }
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservations</title>
+</head>
+<style>
+    .revs{
+        border: 1px solid rgb(69, 45, 45);
+        width: 200px;       
+    }
+    .center{
+        display: flex;
+        text-align: center;
+      
+}
+.center-b{
+    margin-left: 50px;
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+</style>
+<body>
+    <?php 
+    include("navbar.html");
+    ?>
+
+    <h1 class="title"> Вашите Резервации </h1> <br><br>
+
+    <?php if ($reservation){?>
+        <div class="revs">
+    <p class="center">Услуга: <br> Мъжко подстригване при Веселин</p> <br>
+    <p class="center">Дата на резервация: <?= $reservation['datachas']?></p> <br>
+    <p class="center">Час на резервация: <?= $reservation['chas']?></p> <br>
+    <p class="center">Премахни резервацията:     </p>
+        <a href="index.php?controller=removereservation&id=<?= $reservation['id']?>">
+        <button class="center-b">Премахни</button>
+        </a>
+        </div>
+<?php 
+}else{
+?>
+<p> Няма направени резервации</p>
+<?php }?>
+    <?php 
+    include("footer.html");
+    ?> 
+</body>
+</html>
