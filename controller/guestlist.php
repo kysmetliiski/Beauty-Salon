@@ -8,7 +8,7 @@ class Guestlist extends Controller
         parent::__construct();
     }
     public function index()
-    {
+    { 
         
         $data = $this->model->fetchAll("SELECT * FROM services", array());
 

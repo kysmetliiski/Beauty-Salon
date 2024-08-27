@@ -36,7 +36,7 @@ class Login extends Controller
           if ( $user && $user['type'] == 'superuser' ) 
                           {
 
-                  $_SESSION['user'] = $user;
+                   $_SESSION['user'] = $user;
                   
                   header("location: index.php?controller=schedule");
                   exit; 

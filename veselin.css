@@ -10,3 +10,21 @@
 .col-12{
     padding-bottom: 10px;
 }
+h1{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    font-weight: 300;
+}
+.move{
+    display: flex;
+    justify-content: center;
+    margin-left: 240px;
+}
+.booking{
+    display: flex;
+    justify-content: center;
+}
+.w-space{
+    white-space: nowrap;
+}

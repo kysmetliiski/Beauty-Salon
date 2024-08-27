@@ -14,20 +14,21 @@
   <?php 
   include ("navbar.html");
   session_start();
-  print_r( $_SESSION );
     ?>
   <div class="list-group">
     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active btn btn-info">
           <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">Изберете услуга</h5>
           </div>
-          <p class="mb-1"></p>
+          <p class="mb-1"></p> 
     </a>
-
 <?php 
 foreach($data as $params){
+  if($_SESSION){
 ?>
     <a href="index.php?controller=<?= $params['link']?>" class="list-group-item list-group-item-action flex-column align-items-start">
+      <?php } else {?>
+        <a href="index.php?controller=login" class="list-group-item list-group-item-action flex-column align-items-start"> <?php }?>
             <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1"><?= $params['title']?></h5>
             <small><?= $params['price']?>.00лв</small>

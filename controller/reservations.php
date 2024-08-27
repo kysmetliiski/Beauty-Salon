@@ -7,8 +7,8 @@ class reservations extends controller{
     }
 public function index(){
     session_start();
-    print_r($_SESSION);
- 
+    // print_r($_SESSION);
+  
 
     @$userinfo = $_SESSION['user']['id'];
 

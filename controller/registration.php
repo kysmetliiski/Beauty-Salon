@@ -54,7 +54,7 @@ class Registration extends Controller
 			  "error" => $err
 		);
 
-    
+     
 		$this->view->render("registration.html", $params); 
 	}
 }

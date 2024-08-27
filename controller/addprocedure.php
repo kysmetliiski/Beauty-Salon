@@ -8,7 +8,7 @@ class addprocedure extends Controller{
     }
     public function index(){
 
-        $error = "";
+        $error = ""; 
     
         if( isset($_POST[ 'submit' ]  )   ) {
             $title =  $_POST['title'];
@@ -16,7 +16,7 @@ class addprocedure extends Controller{
         $price = $_POST['price'];
 
             if ( !$title ) {
-                echo "<center style='color:red;'>Попълнете имее</center>";
+                echo "<center style='color:red;'>Попълнете име на процедурата</center>";
                 $error = true;
             }
             if ( !$description ) {
